@@ -1,0 +1,19 @@
+body > main {
+  min-height: 100vh;
+  .container {
+    .error {
+      padding: 1rem;
+      border: 3px solid #000;
+      span {
+        display: block;
+        color: #000;
+      }
+      text-align: center;
+      font-size: 5rem;
+      color: #fff;
+      @media (max-width: 767px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
