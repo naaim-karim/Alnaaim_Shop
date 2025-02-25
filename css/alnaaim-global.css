@@ -7,11 +7,7 @@
   --outfit-font: "Outfit", serif;
   --roboto-mono-font: "Roboto Mono", serif;
   --roboto-font: "Roboto", serif;
-  /* --main-color: #19c8fa; */
-  /* --transparent-color: rgb(15 116 143 / 70%); */
   --section-padding: 5rem 0;
-  /* --muted-gray: #777; */
-  /* --fallback-color: #1f2021; */
   --transition: 0.3s;
 }
 /* =============================== */
@@ -210,7 +206,7 @@ body > header {
         background: linear-gradient(45deg, #452600, #815504);
         width: 100%;
         height: 100vh;
-        font-size: 3rem;
+        font-size: 2rem;
         z-index: 1000;
         border-radius: 50%;
         transform: scale(0);
