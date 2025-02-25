@@ -41,7 +41,7 @@ const downloadButtons = document.querySelectorAll(".download-button");
 
 downloadButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    const img = e.target.closest(".image-container").querySelector("img");
+    const img = e.target.closest(".image-card").querySelector("img");
 
     if (!img) return;
 
