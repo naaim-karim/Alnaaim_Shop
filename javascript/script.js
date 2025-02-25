@@ -87,4 +87,4 @@ nextButton.addEventListener("click", (e) => {
   });
 });
 
-window.addEventListener("load", fetchData("testimonials.json"));
+window.addEventListener("load", fetchData("javascript/testimonials.json"));
