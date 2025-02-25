@@ -27,7 +27,7 @@ function displayTestimonials(testimonials) {
     const imgDiv = document.createElement("div");
     imgDiv.className = "customer-img";
     const customerImg = document.createElement("img");
-    customerImg.src = `../images/${img}`;
+    customerImg.src = `images/${img}`;
     imgDiv.append(customerImg);
     const commentText = document.createElement("p");
     commentText.className = "comment-text";
