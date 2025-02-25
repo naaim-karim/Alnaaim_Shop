@@ -31,7 +31,6 @@ body {
   min-height: 100vh;
   background-color: var(--brown-clr);
   font-family: var(--outfit-font);
-  overflow-x: hidden;
 }
 
 ul {
@@ -150,6 +149,7 @@ a {
 
 /* ========== Header (Navigation bar) ========== */
 body > header {
+  overflow-x: clip;
   min-height: 7.25rem;
   display: flex;
   align-items: center;
@@ -191,7 +191,7 @@ body > header {
   body > header {
     .container {
       ul {
-        gap: 2rem;
+        gap: 1.2rem;
       }
     }
   }
