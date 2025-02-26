@@ -37,7 +37,9 @@ filterMenuItems.forEach((li) => {
 });
 
 // Download Button
-const downloadButtons = document.querySelectorAll(".download-button");
+const downloadButtons = document.querySelectorAll(
+  ".image-card .download-button"
+);
 
 downloadButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -58,3 +60,27 @@ downloadButtons.forEach((button) => {
 });
 
 // Maximize Button
+const maximizeButtons = document.querySelectorAll(
+  ".image-card .maximize-button"
+);
+
+maximizeButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    const overlay = document.createElement("div");
+    overlay.className = "popup-overlay";
+    document.body.append(overlay);
+    const popupBox = document.createElement("div");
+    popupBox.className = "popup-box";
+    const popupImg = document.createElement("img");
+    popupImg.src = e.target.closest(".image-card").querySelector("img").src;
+    popupBox.append(popupImg);
+    document.body.append(popupBox);
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("popup-overlay")) {
+    document.querySelector(".popup-box")?.remove();
+    e.target.remove();
+  }
+});

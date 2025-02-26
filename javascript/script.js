@@ -54,8 +54,9 @@ function updateButtons() {
   }
 
   if (
+    testimonialsArray.length <= endingIndex &&
     Math.ceil(commentsContainer.scrollLeft + commentsContainer.clientWidth) >=
-    commentsContainer.scrollWidth
+      commentsContainer.scrollWidth
   ) {
     nextButton.disabled = true;
     nextButton.classList.add("disabled-button");
@@ -66,7 +67,18 @@ function updateButtons() {
 }
 
 // Update buttons dynamically
-commentsContainer.addEventListener("scroll", updateButtons);
+commentsContainer.addEventListener("scroll", () => {
+  updateButtons();
+  if (
+    Math.ceil(commentsContainer.scrollLeft + commentsContainer.clientWidth) >=
+      commentsContainer.scrollWidth &&
+    testimonialsArray.length > endingIndex
+  ) {
+    startingIndex += 10;
+    endingIndex += 10;
+    displayTestimonials(testimonialsArray.slice(startingIndex, endingIndex));
+  }
+});
 
 prevButton.addEventListener("click", (e) => {
   commentsContainer.scrollBy({
@@ -76,11 +88,6 @@ prevButton.addEventListener("click", (e) => {
 });
 
 nextButton.addEventListener("click", (e) => {
-  if (testimonialsArray.length > endingIndex) {
-    startingIndex += 10;
-    endingIndex += 10;
-    displayTestimonials(testimonialsArray.slice(startingIndex, endingIndex));
-  }
   commentsContainer.scrollBy({
     left: commentsContainer.clientWidth,
     behavior: "smooth",

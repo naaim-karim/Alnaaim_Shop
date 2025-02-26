@@ -1,0 +1,91 @@
+body > main {
+  min-height: 100vh;
+  .container {
+    text-align: center;
+    font-size: 3rem;
+    @media (max-width: 767px) {
+      font-size: 1.5rem;
+    }
+    p {
+      color: #ddd;
+      margin: 1rem 0 2rem;
+      .highlighted {
+        font-weight: bold;
+        color: var(--orange-clr);
+      }
+    }
+    .contact-info {
+      > div {
+        position: relative;
+        width: fit-content;
+        padding: 1rem;
+        margin: 0 auto 1rem;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          z-index: -1;
+          background-color: #ddd;
+          border-radius: 1rem;
+          -webkit-border-radius: 1rem;
+          -moz-border-radius: 1rem;
+          -ms-border-radius: 1rem;
+          -o-border-radius: 1rem;
+        }
+        &.whatsapp {
+          &::before {
+            animation: backgroundOne 10s infinite;
+            -webkit-animation: backgroundOne 10s infinite;
+          }
+          a {
+            animation: switchColor 10s infinite;
+            -webkit-animation: switchColor 10s infinite;
+          }
+        }
+        &.tel {
+          &::before {
+            animation: backgroundOne 10s 5s infinite;
+            -webkit-animation: backgroundOne 10s 5s infinite;
+          }
+          a {
+            animation: switchColor 10s 5s infinite;
+            -webkit-animation: switchColor 10s 5s infinite;
+          }
+        }
+        a {
+          display: inline-block;
+          color: #ddd;
+          i {
+            margin-right: 1rem;
+            color: var(--orange-clr);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes backgroundOne {
+  0%,
+  70% {
+    width: 0;
+  }
+  20%,
+  50% {
+    width: 100%;
+  }
+}
+
+@keyframes switchColor {
+  0%,
+  70% {
+    color: #ddd;
+  }
+  20%,
+  50% {
+    color: var(--brown-clr);
+  }
+}
