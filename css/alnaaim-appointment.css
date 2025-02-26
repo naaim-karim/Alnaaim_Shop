@@ -37,22 +37,22 @@ body > main {
         }
         &.whatsapp {
           &::before {
-            animation: backgroundOne 10s infinite;
-            -webkit-animation: backgroundOne 10s infinite;
+            animation: backgroundOne 6s infinite;
+            -webkit-animation: backgroundOne 6s infinite;
           }
           a {
-            animation: switchColor 10s infinite;
-            -webkit-animation: switchColor 10s infinite;
+            animation: switchColor 6s infinite;
+            -webkit-animation: switchColor 6s infinite;
           }
         }
         &.tel {
           &::before {
-            animation: backgroundOne 10s 5s infinite;
-            -webkit-animation: backgroundOne 10s 5s infinite;
+            animation: backgroundOne 6s 3s infinite;
+            -webkit-animation: backgroundOne 6s 3s infinite;
           }
           a {
-            animation: switchColor 10s 5s infinite;
-            -webkit-animation: switchColor 10s 5s infinite;
+            animation: switchColor 6s 3s infinite;
+            -webkit-animation: switchColor 6s 3s infinite;
           }
         }
         a {
