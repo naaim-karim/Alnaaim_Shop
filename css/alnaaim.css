@@ -15,8 +15,6 @@ body > main {
     }
     .content {
       flex-basis: 32.8rem;
-      animation: revealText 1s forwards;
-      -webkit-animation: revealText 1s forwards;
       h1 {
         color: #fff;
         font-family: var(--leckerli-font);
@@ -73,15 +71,6 @@ body > main {
         display: none;
       }
     }
-  }
-}
-
-@keyframes revealText {
-  0% {
-    clip-path: inset(0 0 100% 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
   }
 }
 
