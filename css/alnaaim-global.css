@@ -141,6 +141,18 @@ a {
   font-size: 0.9rem;
   line-height: 1.5;
 }
+
+/* Animate Section */
+.animate-section {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: 1s;
+}
+
+.animate-section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* =============================== */
 
 /* ========== Header (Navigation bar) ========== */

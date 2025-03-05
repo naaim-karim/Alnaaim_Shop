@@ -8,6 +8,10 @@ let startingIndex = 0;
 let endingIndex = 10;
 let testimonialsArray = [];
 
+window.addEventListener("load", () =>
+  fetchData("javascript/testimonials.json")
+);
+
 async function fetchData(link) {
   try {
     const data = await (await fetch(link)).json();
@@ -29,17 +33,16 @@ function displayTestimonials(testimonials) {
     const customerImg = document.createElement("img");
     customerImg.src = `images/${img}`;
     imgDiv.append(customerImg);
+
     const commentText = document.createElement("p");
     commentText.className = "comment-text";
-    commentText.appendChild(document.createTextNode(comment));
+    commentText.textContent = comment;
+
     const customerName = document.createElement("span");
     customerName.className = "customer-name";
-    customerName.appendChild(document.createTextNode(name));
+    customerName.textContent = name;
 
-    commentBox.append(imgDiv);
-    commentBox.append(commentText);
-    commentBox.append(customerName);
-
+    commentBox.append(imgDiv, commentText, customerName);
     commentsContainer.append(commentBox);
   });
 }
@@ -66,8 +69,8 @@ function updateButtons() {
   }
 }
 
-// Update buttons dynamically
 commentsContainer.addEventListener("scroll", () => {
+  // Update buttons dynamically
   updateButtons();
   if (
     Math.ceil(commentsContainer.scrollLeft + commentsContainer.clientWidth) >=
@@ -94,4 +97,19 @@ nextButton.addEventListener("click", (e) => {
   });
 });
 
-window.addEventListener("load", fetchData("javascript/testimonials.json"));
+// Animate Sections When Element Enter/Exit The Viewport
+// ===================
+const animateSections = document.querySelectorAll(".animate-section");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-section-visible");
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+animateSections.forEach((section) => observer.observe(section));

@@ -22,3 +22,11 @@ menuBarButton.addEventListener("click", (e) => {
     });
   });
 });
+
+// Add Lazy Loading To All Images
+// ===================
+const images = document.images;
+
+for (let img of images) {
+  img.setAttribute("loading", "lazy");
+}
